@@ -1,0 +1,51 @@
+{
+    "label": "Twilio",
+    "name": "twilio",
+    "apiVersion": "v1",
+    "internal": false,
+    "configurationType": "GLOBAL",
+    "deployment": {
+        "profiles":[
+            {
+                "name": "default",
+                "label": "Default",
+                "memory": 256,
+                "description": "Default configuration"
+            }
+        ],
+        "allowMultipleInstances": false
+    },
+    "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/twilio.png",
+    "status": "ACTIVE",
+    "stores": [],
+    "events": [
+        {
+            "label": "Inbound SMS",
+            "name": "inboundSms",
+            "description": "Happens when someone sends an SMS to one of your configured phone numbers."
+        }
+    ],
+    "functions": [
+        {
+            "label": "Send SMS",
+            "name": "_sendSms"
+        }
+    ],
+    "scripts":[
+        "functions.js"
+    ],
+    "configuration":[
+        {
+            "name": "accountSid",
+            "label": "Account SID",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "authToken",
+            "label": "Auth Token",
+            "type": "password",
+            "required": true
+        }
+    ]
+}
